@@ -47,3 +47,7 @@ variable "GH_ORG_NAME" {
 variable "GH_STATIC_APP_REPO" {
   type = string
 }
+
+variable "TFE_NOCODE_MODULE_ID" {
+  type = string
+}

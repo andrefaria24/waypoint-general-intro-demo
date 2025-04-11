@@ -25,6 +25,8 @@
     ```
 6. Manually add the developer instructions currently commented out within the waypoint.tf file due to a hcp provider bug to the template
 
+7. Manually lookup and add the value for the TFE_NOCODE_MODULE_ID variable
+
 ## Demo Execution
 
 ### Use Case 1 - Waypoint template creation and usage

@@ -16,7 +16,7 @@ resource "hcp_waypoint_template" "static-webapp" {
     labels = [ "static", "webapp", "javascript" ]
     terraform_project_id = tfe_project.demo-waypoint.id
     terraform_no_code_module_source = "${tfe_registry_module.github_static_app.registry_name}/${tfe_registry_module.github_static_app.organization}/${tfe_registry_module.github_static_app.name}"
-    terraform_no_code_module_id = "nocode-C2Kn9QonPnqi8ooj"
+    terraform_no_code_module_id = var.TFE_NOCODE_MODULE_ID
 }
 
 # resource "hcp_waypoint_application" "webapp" {
