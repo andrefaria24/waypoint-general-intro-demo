@@ -1,0 +1,10 @@
+HCP_PROJECT_ID = "<PROJECT ID>"
+HCP_HVN_ID     = "<HVN ID>"
+HCP_HVN_CIDR   = "10.25.16.0/20"
+
+TFE_TOKEN = "<TFE TOKEN>"
+TFE_ORG_NAME = "<TFE ORG NAME>"
+
+GH_TOKEN = "<TFE TOKEN>"
+GH_ORG_NAME = "<GH ORG NAME>"
+GH_STATIC_APP_REPO = "andrefaria24/terraform-github-static-app-waypoint-demo"
