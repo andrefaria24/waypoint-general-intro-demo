@@ -25,8 +25,6 @@
     ```
 6. Manually add the developer instructions currently commented out within the waypoint.tf file due to a hcp provider bug to the template
 
-7. Manually lookup and add the value for the TFE_NOCODE_MODULE_ID variable
-
 ## Demo Execution
 
 ### Use Case 1 - Waypoint template creation and usage
@@ -58,6 +56,42 @@ The repository includes a .github/workflows directory for the GitHub Action work
 6. Save the file, commit the changes, and push it to the repository.
 
 7. Once it completes, refresh the GitHub Pages URL in your browser to check that the changes have been applied.
+
+### Use Case 2 - Waypoint Actions
+
+1. Log in to HCP and navigate to the Waypoint page. Click on the Actions option from the left navigation and then click on the Create an action button. Enter the following details:
+
+    | Field           | Value                                          |
+    |-----------------|------------------------------------------------|
+    | Action Name     | Merge Branch                                   |
+    | Description     | Merge the specific branch into the main branch |
+
+2. Under Variables, create the following:
+
+    | Key      | Value                 | Sensitive | Enable this value to be defined when the action is triggered |
+    |----------|-----------------------|-----------|--------------------------------------------------------------|
+    | branch   | dev                   | No        | Yes                                                          |
+    | gh_token | <Github access token> | Yes       | No                                                           |
+
+3. Leave the Action type set to Custom
+
+4. Under Action details, set the following:
+
+    | Field      | Value                                                                          |
+    |------------|--------------------------------------------------------------------------------|
+    | Method     | POST                                                                           |
+    | Source URL | https://api.github.com/repos/${application.outputs.repo_name}/merges           |
+    | Body       | {"base":"main","head":"${var.branch}","commit_message":"Merged from Waypoint"} |
+
+5. Under Headers, create the following headers for the request:
+
+    | Key                   | Value                        |
+    |-----------------------|------------------------------|
+    | Accept                | application/vnd.github+json  |
+    | Authorization         | Bearer ${var.gh_token}       |
+    | X-GitHub-Api-Version  | 2022-11-28                   |
+
+6. Click on Create Action
 
 ## Requirements
 

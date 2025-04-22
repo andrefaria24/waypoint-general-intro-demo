@@ -27,7 +27,7 @@ variable "HCP_HVN_CIDR" {
 }
 
 variable "TFE_TOKEN" {
-  type = string
+  type      = string
   sensitive = true
 }
 
@@ -36,7 +36,7 @@ variable "TFE_ORG_NAME" {
 }
 
 variable "GH_TOKEN" {
-  type = string
+  type      = string
   sensitive = true
 }
 
@@ -45,9 +45,5 @@ variable "GH_ORG_NAME" {
 }
 
 variable "GH_STATIC_APP_REPO" {
-  type = string
-}
-
-variable "TFE_NOCODE_MODULE_ID" {
   type = string
 }

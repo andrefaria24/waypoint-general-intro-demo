@@ -8,5 +8,3 @@ TFE_ORG_NAME = "<TFE ORG NAME>"
 GH_TOKEN = "<TFE TOKEN>"
 GH_ORG_NAME = "<GH ORG NAME>"
 GH_STATIC_APP_REPO = "andrefaria24/terraform-github-static-app-waypoint-demo"
-
-TFE_NOCODE_MODULE_ID = "nocode-blahblah"
